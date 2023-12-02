@@ -1,0 +1,287 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #fce4ec;
+  color: #222;
+  margin: 0;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+body.dark-mode {
+  background-color: #2d1b3e; /* Morado oscuro */
+  color: #fff;
+}
+
+header {
+  background-color: #f48fb1; /* Inicialmente, rosado */
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  transition: background-color 0.3s ease-in-out;
+}
+.header-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header-text h1{
+  font-weight: 900;
+  font-size: 4em;
+}
+.header-text h2{
+  font-weight: 600;
+  font-size: 3em;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 20px;
+  background-color: #fff; /* Fondo blanco para el botón */
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.theme-toggle::before {
+  content: '';
+  width: 16px;
+  height: 16px;
+  background-color: #333; /* Color oscuro para el círculo dentro del botón */
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease-in-out;
+}
+
+body.dark-mode header {
+  background-color: #9b4d9e; /* Cambia al morado en modo oscuro */
+}
+
+body.dark-mode .theme-toggle {
+  background-color: #543c6b; /* Morado medio */
+}
+
+body.dark-mode .theme-toggle::before {
+  background-color: #fff; /* Cambia al blanco en modo oscuro */
+  transform: translateX(20px);
+}
+body.dark-mode .theme-toggle {
+  background-color: #8f63a3; /* Morado claro */
+}
+
+nav {
+  background-color: #9b4d9e; /* Morado claro */
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2em;
+}
+
+nav a:hover {
+  opacity: 0.8;
+}
+
+#proyectos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.browser-window {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.title-bar {
+  background-color: #ccc;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 5px 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.title-bar .btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.title-bar .minimize {
+  background-color: #fcce58;
+}
+
+.title-bar .maximize {
+  background-color: #4cd964;
+}
+
+.title-bar .close {
+  background-color: #ff3b30;
+}
+
+.browser-window:hover {
+  transform: scale(1.05);
+}
+#proyectos {
+  margin-top: 3em;
+}
+.proyecto{
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+.proyecto img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.proyecto-info {
+  padding: 40px;
+  background-color: #fff;
+}
+
+.proyecto h2 {
+  margin: 10px 0;
+  font-size: 1.8em;
+  color: #333;
+}
+
+.proyecto p {
+  margin: 0;
+  font-size: 1em;
+  color: #555;
+}
+
+.btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.btn:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.minimize:after {
+  background-color: #fcce58;
+}
+
+.maximize:after {
+  background-color: #4cd964;
+}
+
+.close:after {
+  background-color: #ff3b30;
+}
+
+#skills {
+  margin-top: 5em;
+}
+#skills h2 {
+  margin: 0;
+  font-size: 2em;
+  text-align: center;
+}
+
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-evenly;
+  margin-bottom: 3em;
+}
+
+.skill {
+  width: 200px;
+  margin: 20px;
+  text-align: center;
+}
+
+.skill h3 {
+  margin: 10px 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.skill-level {
+  width: 100%;
+  height: 20px;
+  background-color: var(--level-background, #eee);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-level:after {
+  content: '';
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--level-color, #f48fb1);
+  width: var(--level, 0%); /* Se ha cambiado aquí para tomar el valor de --level */
+}
+
+.github-link {
+  margin-top: 10px;
+  text-align: right;
+  text-decoration: none;
+  color: #333;
+  display: flex;
+  align-items: right;
+  justify-content: right;
+}
+
+.github-link img {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+header {
+  max-width: 1200px; /* Puedes ajustar este valor según tus necesidades */
+  margin: 0 auto; /* Centra el header en pantallas más grandes */
+}
+
+#proyectos {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.proyecto-info {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#skills {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
